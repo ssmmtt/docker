@@ -9,9 +9,9 @@ services:
         volumes:
             - /home/vsftpd:/home/vsftpd
         environment:
-            PASV_ADDRESS : "192.168.201.207" # 修改为主机ip
-            FTP_USER: eversec
-            FTP_PASS: eversec123456
+            PASV_ADDRESS : "192.168.0.1" # 修改为主机ip
+            FTP_USER: test
+            FTP_PASS: test
             PASV_MIN_PORT: 10000
             PASV_MAX_PORT: 10009
         restart: always
