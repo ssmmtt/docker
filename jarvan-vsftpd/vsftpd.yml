@@ -14,5 +14,4 @@ services:
             FTP_PASS: test
             PASV_MIN_PORT: 10000
             PASV_MAX_PORT: 10009
-            LOG_STDOUT: "true"
         restart: always
