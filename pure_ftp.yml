@@ -1,0 +1,19 @@
+version: '2'
+services:
+    ftpd_server:
+        image: stilliard/pure-ftpd:hardened
+        container_name: pure-ftpd
+        ports:
+            - "21:21"
+            - "10000-10009:10000-10009"
+        volumes:
+            - /home/ftp:/home/ftp
+        environment:
+            PUBLICHOST: "192.168.0.1" # 修改为主机ip
+            FTP_USER_NAME: eversec
+            FTP_USER_PASS: eversec123456
+            FTP_USER_HOME: /home/ftp/eversec
+            FTP_PASSIVE_PORTS: "10000:10009" # 一个客户端用2个端口
+            FTP_MAX_CLIENTS: 5 # 最大客户端连接数
+            FTP_MAX_CONNECTIONS: 5 # 每个ip的最大连接数
+        restart: always
