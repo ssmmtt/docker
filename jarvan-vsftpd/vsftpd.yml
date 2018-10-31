@@ -1,0 +1,17 @@
+version: '2'
+services:
+    ftpd_server:
+        image: jarvan/vsftpd
+        container_name: vsftpd
+        ports:
+            - "20-21:20-21"
+            - "10000-10009:10000-10009"
+        volumes:
+            - /home/vsftpd:/home/vsftpd
+        environment:
+            PASV_ADDRESS : "192.168.201.207" # 修改为主机ip
+            FTP_USER: eversec
+            FTP_PASS: eversec123456
+            PASV_MIN_PORT: 10000
+            PASV_MAX_PORT: 10009
+        restart: always
