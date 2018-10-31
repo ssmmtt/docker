@@ -1,0 +1,23 @@
+version: '2'
+services:
+    centos7:
+        image: jarvan/vnc_centos7
+        container_name: centos7
+        ports:
+            - "5901:5901"
+            - "6901:6901"
+            - "22:22"
+        privileged: true
+        volumes:
+            - E:/docker_space/centos7:/home
+        user: "0"
+
+        environment:
+            VNC_COL_DEPTH: 24
+            VNC_RESOLUTION: 1360x768
+            VNC_PW: vncpassword
+            VNC_VIEW_ONLY: "false"
+
+        command: /usr/sbin/init
+
+        restart: always
