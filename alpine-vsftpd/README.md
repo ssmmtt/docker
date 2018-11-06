@@ -1,4 +1,4 @@
-# vsftpd-alpine
+# alpine-vsftpd
 Docker image of vsftpd server based on Alpine 3.8 
 
 ##Exemple usage
