@@ -1,0 +1,19 @@
+version: '3'
+services:
+    ftp:
+        image: jarvan/alpine-vsftpd
+        container_name: vsftpd
+        ports:
+            - "21:21"
+            - "21100-21110:21100-21110"
+        volumes:
+            - /home/vsftpd:/home
+            - /home/vsftpd/log:/var/log
+        environment:
+            - FTP_USER=test
+            - FTP_PASS=test
+            - PASV_ADDRESS=192.168.201.207
+            - PASV_MIN=21100
+            - PASV_MAX=21110
+        restart: always
+
