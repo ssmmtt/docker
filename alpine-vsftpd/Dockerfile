@@ -11,7 +11,6 @@ RUN apk update && apk upgrade && apk --update --no-cache add vsftpd &&  apk --up
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone
 
-
 RUN echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf \
   && echo "use_localtime=YES" >> /etc/vsftpd/vsftpd.conf \
   && echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf \
@@ -29,14 +28,11 @@ RUN echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf \
   && echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf \
   && sed -i "s/anonymous_enable=YES/anonymous_enable=NO/" /etc/vsftpd/vsftpd.conf
 
-
 COPY vsftpd.sh /usr/sbin/
 
 RUN chmod +x /usr/sbin/vsftpd.sh
 
-
 EXPOSE 21 21100-21110
-
 
 CMD /usr/sbin/vsftpd.sh
 
