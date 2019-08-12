@@ -11,6 +11,7 @@ docker run \
   -e PASV_ADDRESS=0.0.0.0 \
   -e PASV_MIN=21100 \
   -e PASV_MAX=21110 \
+  -p 20:20 \
   -p 21:21 \
   -p 21100-21110:21100-21110 \
   jarvan/alpine-vsftpd
@@ -24,6 +25,7 @@ services:
         image: jarvan/alpine-vsftpd
         container_name: vsftpd
         ports:
+            - "20:20"
             - "21:21"
             - "21100-21110:21100-21110"
         volumes:
