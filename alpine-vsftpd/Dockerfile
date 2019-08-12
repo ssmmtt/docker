@@ -32,7 +32,7 @@ COPY vsftpd.sh /usr/sbin/
 
 RUN chmod +x /usr/sbin/vsftpd.sh
 
-EXPOSE 21 21100-21110
+EXPOSE 20 21 21100-21110
 
 CMD /usr/sbin/vsftpd.sh
 
