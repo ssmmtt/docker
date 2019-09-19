@@ -1,7 +1,7 @@
 version: '3'
 services:
   ddns:
-    image: jarvan/ddns:1.0
+    image: jarvan/ddns
     container_name: ddns
     volumes:
       - ./config:/etc/ddns
