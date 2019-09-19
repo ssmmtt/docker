@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ddns:
+    image: jarvan/ddns:1.0
+    container_name: ddns
+    volumes:
+      - ./config:/etc/ddns
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+
+    restart: always

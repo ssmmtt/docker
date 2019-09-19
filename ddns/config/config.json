@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ddns.newfuture.cc/schema/v2.json",
+  "debug": false,
+  "dns": "dnscom",
+  "id": "xxxxxxxx",
+  "index4": "url:http://ifconfig.me/",
+  "ipv4": [
+    "www.xxxxxx.xxx"
+  ],
+  "proxy": null,
+  "token": "xxxxxxx"
+}
