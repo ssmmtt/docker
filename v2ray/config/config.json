@@ -1,0 +1,29 @@
+{
+    "log": {
+        "access": "/tmp/access.log",
+        "error": "/tmp/error.log",
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "port": 22222,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "uuid",
+                        "alterId": 4,
+                        "security": "auto",
+                        "level": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ]
+}

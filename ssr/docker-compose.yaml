@@ -1,0 +1,14 @@
+version: '3'
+services:
+    ssr:
+        image: ziqinlei/shadowsocksr:latest
+        container_name: ssr
+        ports:
+            - 10240:8888
+        environment:
+            SSR_PASSWORD: "password"
+            SSR_ENCRYTION: "aes-256-cfb"
+            SSR_PROTOCOL: "auth_sha1_v4"
+            SSR_OBFS: "tls1.2_ticket_auth"
+        restart: always
+
