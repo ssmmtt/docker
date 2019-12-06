@@ -10,4 +10,4 @@ RUN apk update && \
 RUN apk add --no-cache python3 && \
     pip3 install --upgrade --no-cache-dir pip setuptools && \
     ln -s /usr/bin/python3 /usr/bin/python && \
-    pip3 install --no-cache-dir flask flask-sqlalchemy pymysql requests
+    pip3 install --no-cache-dir requests
